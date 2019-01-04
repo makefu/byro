@@ -2,7 +2,8 @@
 
 ```
 pip install docker-compose
-git clone https://github.com/byro/byro/
+## TODO: as of right now, only this fork contains updated docker-compose and settings file
+git clone https://github.com/makefu/byro/
 cd byro/src
 
 # we need the db at startup
