@@ -37,7 +37,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'byro', 'static')]
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'wcc($o)pj5vcy4r0wv2f*c(ws@92^f&p*1r+hsojg*qn7uzuge'
+SECRET_KEY = 'wcc($o)pj5vca4r0wv2f*c(ws@92^f&p*1r+hsojg*qn7uzuge'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -138,6 +138,12 @@ if os.getenv('TRAVIS'):
     DATABASES['default']['USER'] = 'postgres'
     DATABASES['default']['HOST'] = 'localhost'
     DATABASES['default']['PASSWORD'] = ''
+
+# for docker-compose development
+if os.getenv('DEVELOPMENT'):
+    DATABASES['default']['USER'] = 'byro'
+    DATABASES['default']['HOST'] = 'db'
+    DATABASES['default']['PASSWORD'] = 'byro'
 
 
 # Password validation
